@@ -11,6 +11,15 @@ const createWindow = () => {
     win.loadFile('index.html')
 }
 
+
+// macOS
 app.whenReady().then(() => {
     createWindow();
+    app.on('activate', () => {
+        if (BrowserWindow.getAllWindows().length===0) {
+            createWindow() // make sure 0 windows can't be open
+        }
+    })
+
+    
 })
