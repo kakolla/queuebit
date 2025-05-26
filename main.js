@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const { Tray, Menu, nativeImage } = require('electron')
 const path = require('path')
 
@@ -28,11 +28,18 @@ const createWindow = () => {
         height: 300,
         webPreferences: {
             preload: __dirname + '/preload.js'
-        }
+        },
+        alwaysOnTop: true
+        
     })
+
+    // listen for events
+    ipcMain.on("do-smt", () => console.log('welcome'));
 
     // Dev tools
     // win.webContents.openDevTools()
+
+    // Load page
     win.loadFile('index.html')
 }
 
