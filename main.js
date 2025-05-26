@@ -31,6 +31,8 @@ const createWindow = () => {
         }
     })
 
+    // Dev tools
+    // win.webContents.openDevTools()
     win.loadFile('index.html')
 }
 
@@ -48,6 +50,7 @@ app.whenReady().then(() => {
         // quit app on windows & linux platform
         if (process.platform !== 'darwin') app.quit()
     })
+
 
     
 })
