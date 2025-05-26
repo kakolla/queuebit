@@ -1,4 +1,5 @@
 const button = document.getElementById('btn')
+const notionBtn = document.getElementById('connectBtn')
 const answerTextarea = document.getElementById('answer')
 const questionElement = document.getElementById('question')
 
@@ -27,4 +28,9 @@ button.addEventListener('click', async () => {
     // Reset button
     button.disabled = false
     button.textContent = 'Generate Question'
+})
+
+
+notionBtn.addEventListener('click', () => {
+    window.api.connectToNotion()
 })
