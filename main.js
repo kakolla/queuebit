@@ -5,7 +5,7 @@ require('dotenv').config()
 const OpenAI = require('openai')
 
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
+    apiKey: process.env.API_KEY
 })
 
 let tray = null
